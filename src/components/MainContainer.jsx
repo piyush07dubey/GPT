@@ -12,7 +12,7 @@ const MainContainer = () => {
   <>
   <Videotitle
   title={original_title}
-  description={overview}
+  overview={overview}
   />
   <VideoBackground
   movieId={id}

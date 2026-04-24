@@ -43,17 +43,21 @@ return ()=>unsubscribe();
 }, [dispatch, navigate])
   return (
     <>
-   
-    <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between ">
-      <img className="w-44" src={image} alt="header" />
+    <div className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between bg-gradient-to-b from-black/90 to-transparent px-6 md:px-8 py-4">
+      <img className="h-10 md:h-12 w-auto" src={image} alt="logo" />
+      {user && (
+        <div className="flex items-center gap-3">
+          <img className="h-8 w-8 md:h-10 md:w-10 rounded" src={user.photoURL} alt="user" />
+          <button 
+            onClick={handleSignOut} 
+            className="rounded bg-red-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-red-700 md:text-base"
+          >
+            Sign Out
+          </button>
+        </div>
+      )}
     </div>
-    {user && (
-    <div className="absolute right-2 flex py-4 ">
-      <img className="w-12 " src={user.photoURL} alt="header" />
-      <button onClick={handleSignOut} className="bg-red-500 text-white px-4 py-2 rounded-md">Sign out</button>
-    </div>
-    )}
-     </>
+    </>
   );
 };
 

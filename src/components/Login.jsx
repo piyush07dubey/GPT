@@ -65,35 +65,33 @@ const Login = () => {
   };
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen bg-black">
       <Header />
 
       {/* Background Image */}
-      <div className="fixed top-0 left-0 -z-10 bg-black w-screen h-screen">
+      <div className="fixed inset-0 -z-10">
         <img
           src={image}
           alt="background"
-          className="w-full h-full object-cover opacity-50 sm:opacity-60"
+          className="h-full w-full object-cover opacity-50 sm:opacity-60"
         />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
       {/* Login Form Container */}
-      <div className="flex justify-center items-center min-h-screen px-4 pt-20">
-        <form
-          className="p-10 sm:p-14 bg-black/80 w-full max-w-[450px] text-white rounded-lg shadow-2xl backdrop-blur-sm"
-        >
-          <h1 className="font-bold text-3xl sm:text-4xl mb-8 bg-opacity-70">
+      <div className="flex min-h-screen items-center justify-center px-4 py-12">
+        <form className="w-full max-w-md rounded-lg bg-black/80 p-8 text-white shadow-2xl backdrop-blur-sm sm:p-10 md:p-12">
+          <h1 className="mb-8 text-3xl font-bold sm:text-4xl">
             {isSignInForm ? "Sign In" : "Sign Up"}
           </h1>
 
           <div className="flex flex-col gap-4">
-
             {!isSignInForm && (
               <input
-              ref={name}
+                ref={name}
                 type="text"
                 placeholder="Full Name"
-                className="p-4 w-full bg-gray-900/70 rounded-md border border-gray-600 focus:border-white focus:outline-none focus:ring-1 focus:ring-white transition-all placeholder:text-gray-400"
+                className="w-full rounded-md border border-gray-600 bg-gray-900/70 p-4 placeholder:text-gray-400 transition-all focus:border-white focus:outline-none focus:ring-1 focus:ring-white"
               />
             )}
 
@@ -101,32 +99,35 @@ const Login = () => {
               ref={email}
               type="text"
               placeholder="Email or mobile number"
-              className="p-4 w-full bg-gray-900/70 rounded-md border border-gray-600 focus:border-white focus:outline-none focus:ring-1 focus:ring-white transition-all placeholder:text-gray-400"
+              className="w-full rounded-md border border-gray-600 bg-gray-900/70 p-4 placeholder:text-gray-400 transition-all focus:border-white focus:outline-none focus:ring-1 focus:ring-white"
             />
 
             <input
               ref={password}
               type="password"
               placeholder="Password"
-              className="p-4 w-full bg-gray-900/70 rounded-md border border-gray-600 focus:border-white focus:outline-none focus:ring-1 focus:ring-white transition-all placeholder:text-gray-400"
-            /> 
-            <p className="text-red-500 font-bold text-lg py-2">{errorMessage}</p>
+              className="w-full rounded-md border border-gray-600 bg-gray-900/70 p-4 placeholder:text-gray-400 transition-all focus:border-white focus:outline-none focus:ring-1 focus:ring-white"
+            />
+
+            {errorMessage && (
+              <p className="py-2 text-lg font-bold text-red-500">{errorMessage}</p>
+            )}
           </div>
 
           <button
             onClick={handleButtonClick}
-            className="py-4 mt-8 mb-4 bg-[#E50914] hover:bg-[#C11119] w-full rounded-md font-bold text-lg transition-colors shadow-md"
+            className="mt-8 mb-4 w-full rounded-md bg-red-600 py-4 text-lg font-bold text-white transition-colors shadow-md hover:bg-red-700"
           >
             {isSignInForm ? "Sign In" : "Sign Up"}
           </button>
 
-          <div className="flex flex-col gap-4 mt-4">
+          <div className="mt-4 flex flex-col gap-4">
             <p className="text-gray-400">
               {isSignInForm ? (
                 <>
                   New here?{" "}
                   <span
-                    className="text-white hover:underline cursor-pointer font-medium"
+                    className="cursor-pointer font-medium text-white hover:underline"
                     onClick={() => setIsSignInForm(!isSignInForm)}
                   >
                     Sign up now.
@@ -136,7 +137,7 @@ const Login = () => {
                 <>
                   Already registered?{" "}
                   <span
-                    className="text-white hover:underline cursor-pointer font-medium"
+                    className="cursor-pointer font-medium text-white hover:underline"
                     onClick={() => setIsSignInForm(!isSignInForm)}
                   >
                     Sign in now.
@@ -145,7 +146,7 @@ const Login = () => {
               )}
             </p>
 
-            <p className="text-xs text-gray-500 max-w-[300px]">
+            <p className="max-w-[300px] text-xs text-gray-500">
               This page is protected by Google reCAPTCHA to ensure you're not a bot.
             </p>
           </div>
