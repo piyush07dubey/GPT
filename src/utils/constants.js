@@ -10,8 +10,9 @@ export const API_OPTIONS = {
     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYTM0ODllN2U5MWRiMzFjN2UzMWFiM2M1YzA3OWZhYyIsIm5iZiI6MTc3NTUyNjU2My41MDU5OTk4LCJzdWIiOiI2OWQ0NjJhM2RlNDNlNmI3YTMwNzExZWIiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.qLpPZJQc_xEEwFT16AFQ84fVHCEnM6URGpb_zI2ySHs'
   }
 };
+export const IMG_CDN_URL="https://image.tmdb.org/t/p/w500"
 
-// fetch('https://api.themoviedb.org/3/authentication', API_OPTIONS)
-//   .then(res => res.json())
-//   .then(res => console.log(res))
-//   .catch(err => console.error(err));
+export const SUPPORTED_LANGUAGES=[{identifier:"en",name:"English"},
+  {identifier:"hindi",name:"Hindi"},
+  {identifier:"spanish",name:"Spanish"}
+]
