@@ -20,11 +20,7 @@ const MainContainer = () => {
     {poster_path && (
       <div className="absolute bottom-0 left-0 right-0 flex justify-center pb-8 z-10">
         <div className="w-36 md:w-48 shrink-0 transition-all duration-300 hover:scale-105 cursor-pointer">
-          <img 
-            className="rounded-md shadow-2xl object-cover w-full h-full border-4 border-white/20" 
-            alt="Movie Poster" 
-            src={IMG_CDN_URL + poster_path} 
-          />
+         
         </div>
       </div>
     )}
