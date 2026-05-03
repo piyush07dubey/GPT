@@ -2,11 +2,11 @@ const VideoTitle = ({ title, overview }) => {
   return (
     <div className="absolute z-10 flex aspect-video w-screen items-center bg-gradient-to-r from-black via-black/70 to-transparent px-6 pt-[15%] md:px-12 lg:px-24 pointer-events-none">
       <div className="pointer-events-auto max-w-2xl">
-        <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-white drop-shadow-xl md:text-5xl lg:text-6xl">
+        <h1 className="mb-4 text-2xl md:text-4xl font-extrabold tracking-tight text-white drop-shadow-xl md:text-5xl lg:text-6xl">
           {title}
         </h1>
 
-        <p className="mb-8 hidden max-w-xl text-base leading-relaxed text-gray-200 drop-shadow-md md:block lg:text-lg">
+        <p className="mb-8 hidden md:inline-block max-w-xl text-base leading-relaxed text-gray-200 drop-shadow-md md:block lg:text-lg">
           {overview}
         </p>
 

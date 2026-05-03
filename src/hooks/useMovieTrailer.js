@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { API_OPTIONS } from "../utils/constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // FIX 1: Import the Redux action you are trying to dispatch
 import { addTrailerVideo } from "../utils/movieSlice"; 
 

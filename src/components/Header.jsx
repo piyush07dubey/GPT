@@ -53,8 +53,9 @@ return ()=>unsubscribe();
 }, [dispatch, navigate])
   return (
     <>
-    <div className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between bg-gradient-to-b from-black/90 to-transparent px-6 md:px-8 py-4">
-      <img className="h-10 md:h-12 w-auto" src={image} alt="logo" />
+    <div className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between bg-gradient-to-b from-black/90 to-transparent 
+    px-6 md:px-8 py-4 flex flex-col md:flex-row">
+      <img className="h-10 md:h-12 w-auto mx-auto md:mx-0" src={image} alt="logo" />
       {user && (
         <div className="flex items-center gap-3">
          { showGptSearch && (<select className=" bg-gray-800 text-white rounded-lg p-2 m-2"
