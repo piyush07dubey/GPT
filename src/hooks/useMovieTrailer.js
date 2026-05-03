@@ -7,7 +7,7 @@ import { addTrailerVideo } from "../utils/movieSlice";
 // FIX 2: Pass movieId as an argument to the hook
 const useMovieTrailer = (movieId) => {
   const dispatch = useDispatch();
-
+const trailerVideo=useSelector(store=>store.movies.trailerVideo)
   const getMovieVideos = async () => {
     // Optional but recommended: Safety check so it doesn't fetch if movieId is missing
     if (!movieId) return;
@@ -27,9 +27,10 @@ const useMovieTrailer = (movieId) => {
   }
 
   useEffect(() => {
+    if(!trailerVideo){
     getMovieVideos();
   // FIX 3: Add movieId to the dependency array
-  }, [movieId]); 
+}} ,[movieId]);  
 };
 
 export default useMovieTrailer;
